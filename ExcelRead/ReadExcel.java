@@ -1,11 +1,15 @@
 package ExcelRead;
 
 import java.io.File;
+import java.io.IOException;
+
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 
 public class ReadExcel {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException, InvalidFormatException {
 		/*
 		 * 
 		 	Name if library for diffrent file type
@@ -36,37 +40,13 @@ public class ReadExcel {
 		
 		File src = new File("./TestData/Data.xlsx");
 		
-	//	XSSFWorkbook wb = new XSSFWorkbook(src);
+		XSSFWorkbook wb = new XSSFWorkbook(src);
 		
+		System.out.println("Total sheet count in excel :"+ wb.getNumberOfSheets());
 		
+		wb.close();
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+	
 	}
 
 }
